@@ -1,9 +1,9 @@
 # prnt.sc-scrape
 Small toy program that will get random images from the prnt.sc website.
 
-Created for education purposes only. This website could contain sensitive images, which could be downloaded by this program. Use at your own risk.
+Created for educational purposes only. This website contains sensitive images, which this program could potentially download onto your machine. Be aware of how the applications you use handle your sensitive information, and be safe!
 
-### TODO
-* Use a python library instead of wget, although it works just fine.
-* Clean up command line argument input.
-* Make output prettier.
+### How to use
+
+* You need Requests, and BeautifulSoup.
+* Run the script and pass the amount of images wanted (default is 1).
