@@ -2,19 +2,17 @@
 # prntsc-scrape.py - get random images from the website https://prnt.sc/
 #
 # Andrew Rodriguez
-# Friday April 17th, 2020
+# Friday May 15th, 2020
 #
 
 # Imports 
-import os 		# I/O
+import os 	# I/O
 import string 	# Some constants for generation.
 import random 	# For random string.
-import sys 		# Command line arguments.
+import sys 	# Command line arguments.
 import time 	# Check time.
-
-# Imports from modules not in the the python standard library
 import requests # Using get.
-import bs4		# Easy html parsing.
+import bs4	# Easy html parsing.
 
 #
 # Code
@@ -33,9 +31,10 @@ def get_image():
 	url = "https://prnt.sc/"
 	img_append = generate_string()
 	print("Current url: " + url + img_append, end=" ")
-
-	# TODO change some of this around.
+	
 	# Get initial website.
+	# Here is a template for changing the agent.
+	# "User-agent": "Mozilla/<version> (<system-information>) <platform> (<platform-details>) <extensions>"
 	headers = {"User-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"}
 	html = requests.get(url + img_append, headers = headers).text
 	soup = bs4.BeautifulSoup(html, "html.parser")
